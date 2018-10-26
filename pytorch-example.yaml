@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: pytorch-example
+spec:
+    containers:
+      - name: pytorch-container
+        image: pytorch/pytorch:latest
+        args: ["sleep", "infinity"]
+        volumeMounts:
+          - mountPath: /data
+            name: data
+        resources:
+            limits:
+                nvidia.com/gpu: 1
+    restartPolicy: Never
+    volumes:
+      - name: data
+        persistentVolumeClaim:
+            claimName: data
