@@ -88,7 +88,7 @@ This defines what physical resources the pos will have access to. In this case a
 
 Depending on your application, you will probably need to use software other than TensorFlow + Jupyter.
 Luckily, someone has probably already defined an image with the software you need!
-[Docker Hub](hub.docker.com) is a public repository for images, all of which can be used in a Kubernetes configuration effortlessly.
+[Docker Hub](https://hub.docker.com) is a public repository for images, all of which can be used in a Kubernetes configuration effortlessly.
 
 #### Image
 For example, suppose you wanted to make a pod with PyTorch installed.
@@ -206,8 +206,8 @@ kubectl port-forward pytorch-example 8888:8888
 
 To delete the Pod/PersistentVolume:
 ```{bash}
-kubectl create -f pytorch-example.yaml  # Delete the Pod
-kubectl create -f volume-example.yaml  # Delete the PersistentVolume
+kubectl delete -f pytorch-example.yaml  # Delete the Pod
+kubectl delete -f volume-example.yaml  # Delete the PersistentVolume
 ```
 These commands can be run seperately if you want to delete only the Pod.
 Also you should *always delete the Pod first* to prevent unwanted behaviour.
